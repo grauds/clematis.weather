@@ -6,8 +6,8 @@ from PIL.ExifTags import TAGS
 
 import torchvision.transforms as transforms
 
-def get_image_files(directory='resources/images'):
 
+def get_image_files(directory='resources/images'):
     """List all image files in the specified directory."""
 
     image_files = []
@@ -15,8 +15,8 @@ def get_image_files(directory='resources/images'):
         image_files.append(str(file))
     return image_files
 
-def get_image_date(image_path):
 
+def get_image_date(image_path):
     """Extract date from image metadata."""
 
     image = Image.open(image_path)
@@ -28,8 +28,8 @@ def get_image_date(image_path):
                 return exif[tag_id]
     return None
 
-def get_image_date_to_path_mapping(image_files):
 
+def get_image_date_to_path_mapping(image_files):
     """Create mapping between image dates and corresponding image paths."""
 
     mapping = {}
@@ -39,8 +39,8 @@ def get_image_date_to_path_mapping(image_files):
             mapping[datetime.strptime(image_date, '%Y:%m:%d %H:%M:%S')] = image_path
     return mapping
 
-def image_to_tensor(image_path):
 
+def image_to_tensor(image_path):
     """Convert image to tensor."""
 
     transform = transforms.Compose([
