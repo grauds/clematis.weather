@@ -46,3 +46,15 @@ to [resources/images](resources/images)
 ````bash
 python main.py
 ```` 
+
+## Quality
+
+The quality of classification varies, for example, the worst case was when 
+for the winter sample with much snow, the model gives a mild summer temperature: 
+
+<img src="./sample.jpg" width="50%" alt="sample"/>
+
+```
+Random image: sample.jpg, description: T=-0.5, P=761.6, U=84, DD=Wind blowing from the north-northwest, Cl=Cumulonimbus calvus, with or without Cumulus, Stratocumulus or Stratus.
+CLIP description: T=15.5, P=768.3, U=94, DD=Calm, no wind, Cl=nan
+```
