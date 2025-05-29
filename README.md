@@ -14,6 +14,15 @@ and find similarities between weather descriptions and visual data.
 - Finds similarities between weather conditions and images
 - Matches random images with most similar weather descriptions
 
+## Data Preparation
+
+The weather data is taken from by the weather station Moscow, Russia, WMO_ID=27612. 
+These files are available at http://rp5.ru/archive.php?wmo_id=27612&lang=en,
+thanks to 'Reliable Prognosis', rp5.ru, © Raspisaniye Pogodi Ltd., 2004-2024.
+
+Weather measurements are taken five times a day, while the images are taken at random times.
+This script finds the closest measurement to the picture date/time during the data preparation stage.
+
 ## Requirements
 
 - Python 3.7+

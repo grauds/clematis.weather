@@ -92,7 +92,7 @@ def get_random_image_description(image_features, text_features, weather_image_ma
         similarity = get_similarity(new_image_features, text_features)
         most_similar_idx = similarity.argmax().item()
 
-    return random_image[1], get_weather_description(list(weather_image_map.values())[most_similar_idx][0])
+    return random_image[0], random_image[1], get_weather_description(list(weather_image_map.values())[most_similar_idx][0])
 
 
 if __name__ == "__main__":
@@ -104,5 +104,6 @@ if __name__ == "__main__":
     print(f"Processed {len(weather_image_map)} images with CLIP")
     image_features, text_features = features
 
-    random_image, random_description = get_random_image_description(image_features, text_features, weather_image_map)
-    print(f"Random image: {random_image}, description: {random_description}")
+    random_description, random_image, random_description_clip = get_random_image_description(image_features, text_features, weather_image_map)
+    print(f"Random image: {random_image}, description: {get_weather_description(random_description)}")
+    print(f"CLIP description: {random_description_clip}")
